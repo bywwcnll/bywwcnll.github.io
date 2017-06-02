@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "hexo server"
+    "server": "hexo server",
+    "generate": "hexo generate",
+    "deploy": "hexo deploy"
   },
   "hexo": {
     "version": "3.3.7"
   },
   "dependencies": {
     "hexo": "^3.2.0",
+    "hexo-browsersync": "^0.2.0",
     "hexo-deployer-git": "^0.3.0",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
