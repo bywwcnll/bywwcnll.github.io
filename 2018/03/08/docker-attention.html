@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: hexo | Bywwcnll</title>
+  <title>docker_attention | Bywwcnll</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bywwcnll">
-<meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/tags/hexo/index.html">
+  <meta name="description" content="windows下使用docker的注意事项 win路径的挂载问题 12# 示例代码&amp;gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx  A required privilege is not held by this client  使用带管理员权限的命令">
+<meta name="keywords" content="windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker_attention">
+<meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html">
 <meta property="og:site_name" content="Bywwcnll">
+<meta property="og:description" content="windows下使用docker的注意事项 win路径的挂载问题 12# 示例代码&amp;gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx  A required privilege is not held by this client  使用带管理员权限的命令">
+<meta property="og:updated_time" content="2018-03-08T11:14:53.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bywwcnll">
+<meta name="twitter:title" content="docker_attention">
+<meta name="twitter:description" content="windows下使用docker的注意事项 win路径的挂载问题 12# 示例代码&amp;gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx  A required privilege is not held by this client  使用带管理员权限的命令">
   
     <link rel="alternate" href="/atom.xml" title="Bywwcnll" type="application/atom+xml">
   
@@ -63,39 +68,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/28/hello-world.html" class="archive-article-date">
-  <time datetime="2017-05-28T12:08:05.000Z" itemprop="datePublished">5月 28</time>
+        <section id="main"><article id="post-docker-attention" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/08/docker-attention.html" class="article-date">
+  <time datetime="2018-03-08T11:02:52.000Z" itemprop="datePublished">2018-03-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/28/hello-world.html">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      docker_attention
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="windows下使用docker的注意事项"><a href="#windows下使用docker的注意事项" class="headerlink" title="windows下使用docker的注意事项"></a>windows下使用docker的注意事项</h1><ul>
+<li><p>win路径的挂载问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 示例代码</span></div><div class="line">&gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx</div></pre></td></tr></table></figure>
+</li>
+<li><p>A required privilege is not held by this client</p>
+<blockquote>
+<p>使用带管理员权限的命令行工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; docker cp <span class="_">-a</span> ng:/etc/nginx ./config</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjeif13zl00010ls6idau48kz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/08/watch-film.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">watch_film</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

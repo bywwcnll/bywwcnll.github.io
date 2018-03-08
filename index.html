@@ -65,6 +65,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker-attention" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/08/docker-attention.html" class="article-date">
+  <time datetime="2018-03-08T11:02:52.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/docker-attention.html">docker_attention</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="windows下使用docker的注意事项"><a href="#windows下使用docker的注意事项" class="headerlink" title="windows下使用docker的注意事项"></a>windows下使用docker的注意事项</h1><ul>
+<li><p>win路径的挂载问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 示例代码</span></div><div class="line">&gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx</div></pre></td></tr></table></figure>
+</li>
+<li><p>A required privilege is not held by this client</p>
+<blockquote>
+<p>使用带管理员权限的命令行工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; docker cp <span class="_">-a</span> ng:/etc/nginx ./config</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjeif13zl00010ls6idau48kz" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-watch-film" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/08/watch-film.html" class="article-date">
@@ -94,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjei5pxuz00002as6uu8y5v7r" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjeif13zs00060ls6eoob7a6k" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/film/">film</a></li></ul>
@@ -142,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjei5pxv500032as673shsow9" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjeif13zr00050ls61cwz2roc" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -275,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjei5pxv700052as6zyp2rp1d" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjeif13zp00040ls61383zbet" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js学习笔记/">js学习笔记</a></li></ul>
@@ -326,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjei5pxv200012as6e164tt5h" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjeif13zg00000ls6g3jvlpke" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -347,7 +400,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -357,7 +410,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a>
+      <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
     </div>
   </div>
 
@@ -366,7 +419,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -377,6 +430,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/08/docker-attention.html">docker_attention</a>
+          </li>
         
           <li>
             <a href="/2018/03/08/watch-film.html">watch_film</a>
