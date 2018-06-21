@@ -9,6 +9,7 @@
 <meta property="og:title" content="Bywwcnll">
 <meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/index.html">
 <meta property="og:site_name" content="Bywwcnll">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bywwcnll">
   
@@ -65,6 +66,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webpack代码分割注意事项" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/21/webpack代码分割注意事项.html" class="article-date">
+  <time datetime="2018-06-21T02:26:42.000Z" itemprop="datePublished">2018-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/21/webpack代码分割注意事项.html">webpack代码分割注意事项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="打包时使用chunkhash进行代码分割"><a href="#打包时使用chunkhash进行代码分割" class="headerlink" title="打包时使用chunkhash进行代码分割"></a>打包时使用chunkhash进行代码分割</h1><p>这会导致在修改部分代码后，上一层的文件引用没有使用较新的文件，只能强行清空缓存，但是这在企业微信PC端上就不好操作了。为此，将webpack配置文件webpack.prod.conf.js中的out对象配置成以下形式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">    path: config.build.assetsRoot,</span><br><span class="line">    filename: utils.assetsPath(<span class="string">'js/[name].[hash].js'</span>),</span><br><span class="line">    chunkFilename: utils.assetsPath(<span class="string">'js/[id].[hash].js'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/06/21/webpack代码分割注意事项.html" data-id="cjiny1k7f000atxs6jzgaduu3" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-docker-attention" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/08/docker-attention.html" class="article-date">
@@ -93,12 +133,12 @@
       
         <h1 id="windows下使用docker的注意事项"><a href="#windows下使用docker的注意事项" class="headerlink" title="windows下使用docker的注意事项"></a>windows下使用docker的注意事项</h1><ul>
 <li><p>win路径的挂载问题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 示例代码</span></div><div class="line">&gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例代码</span></span><br><span class="line">&gt; docker run -it --name ng --rm -p 80:80 -v /c/Users/xxx/Desktop/nginx/config:/etc/nginx nginx</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>A required privilege is not held by this client</p>
 <blockquote>
 <p>使用带管理员权限的命令行工具</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; docker cp <span class="_">-a</span> ng:/etc/nginx ./config</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; docker cp -a ng:/etc/nginx ./config</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
@@ -106,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjejkug5r00012ps635gugvuu" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjiny1k700000txs62nkb034i" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -141,14 +181,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="待观看"><a href="#待观看" class="headerlink" title="待观看"></a>待观看</h1><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- ```Requiem For a Dream</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- ```Requiem For a Dream</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjejkug5x00052ps6z8dx7cn5" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjiny1k7b0005txs6v12op49a" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/film/">film</a></li></ul>
@@ -196,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjejkug5y00062ps603cbznz5" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjiny1k7d0006txs6beopj9a5" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -240,7 +280,7 @@
 <li>“string”——如果这个值是字符串;</li>
 <li>“number”——如果这个值是数值;</li>
 <li>“object”——如果这个值是对象或 <strong>null</strong> ;</li>
-<li>“function”——如果这个值是函数;<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;            <span class="comment">//'object'</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>;       <span class="comment">//'undefined'</span></div><div class="line"><span class="comment">//typeof function;      //SyntaxError</span></div><div class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;    <span class="comment">//'function'</span></div><div class="line"><span class="keyword">typeof</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);  <span class="comment">//'function'</span></div><div class="line"><span class="comment">//typeof ()=&gt;&#123;&#125;;        //SyntaxError</span></div><div class="line"><span class="keyword">typeof</span> (<span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;);        <span class="comment">//'function'</span></div></pre></td></tr></table></figure>
+<li>“function”——如果这个值是函数;<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>;            <span class="comment">//'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>;       <span class="comment">//'undefined'</span></span><br><span class="line"><span class="comment">//typeof function;      //SyntaxError</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;    <span class="comment">//'function'</span></span><br><span class="line"><span class="keyword">typeof</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);  <span class="comment">//'function'</span></span><br><span class="line"><span class="comment">//typeof ()=&gt;&#123;&#125;;        //SyntaxError</span></span><br><span class="line"><span class="keyword">typeof</span> (<span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;);        <span class="comment">//'function'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>typeof 操作符的操作数可以是变量(message),也可以是数值字面量。<br>typeof 是一个操作符而不是函数,因此例子中的圆括号尽管可以使用,但不是必需的。</p>
@@ -248,14 +288,14 @@
 <p><em>Safari 5 及之前版本、Chrome 7 及之 前版本在对正则表达式调用 typeof 操作符时会返回”function”,而其他浏览器在这种情况下会返回 “object”。</em></p>
 </blockquote>
 <hr>
-<h2 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">undefined</span>;</div><div class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'undefined'</span></div></pre></td></tr></table></figure>
-<p>未经初始 化的值默认就会取得 undefined 值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'undefined'</span></div><div class="line"><span class="built_in">console</span>.log(b);         <span class="comment">//ReferenceError: b is not defined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>==c);   <span class="comment">//ReferenceError: c is not defined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);  <span class="comment">//'undefined'</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);  <span class="comment">//'undefined'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'undefined'</span></span><br></pre></td></tr></table></figure>
+<p>未经初始 化的值默认就会取得 undefined 值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'undefined'</span></span><br><span class="line"><span class="built_in">console</span>.log(b);         <span class="comment">//ReferenceError: b is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>==c);   <span class="comment">//ReferenceError: c is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);  <span class="comment">//'undefined'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);  <span class="comment">//'undefined'</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p><em>对于尚未声明过的变量,只能执行一项操作,即使用 typeof 操作符检测其数据类型(对未经声明的变量调用 delete 不会导致错 误,但这样做没什么实际意义,而且在严格模式下确实会导致错误)。</em></p>
 </blockquote>
 <hr>
-<h2 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</div><div class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'object'</span></div></pre></td></tr></table></figure>
-<p>Null 类型是第二个只有一个值的数据类型,这个特殊的值是 null。从逻辑角度来看,null 值表 示一个空对象指针,而这也正是使用 typeof 操作符检测 null 值时会返回”object”的原因。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>==<span class="literal">undefined</span>);       <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>===<span class="literal">undefined</span>);      <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<h2 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);         <span class="comment">//'object'</span></span><br></pre></td></tr></table></figure>
+<p>Null 类型是第二个只有一个值的数据类型,这个特殊的值是 null。从逻辑角度来看,null 值表 示一个空对象指针,而这也正是使用 typeof 操作符检测 null 值时会返回”object”的原因。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>==<span class="literal">undefined</span>);       <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>===<span class="literal">undefined</span>);      <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
 <p>undefined 值是派生自 null 值的,因此 ECMA-262 规定对它们的相等性测试要返回 true。</p>
 <hr>
 <h2 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h2><p>Boolean 类型的字面值 true 和 false 是区分大小写的。也就是说,<code>True</code> 和 <code>False</code> (以及其他的混合大小写形式)都不是 Boolean 值,只是标识符。<br>– 对任何数据类型的值调用 Boolean()函数,而且总会返回一个 Boolean 值。至于返回的 这个值是 true 还是 false,取决于要转换值的数据类型及其实际值。</p>
@@ -296,18 +336,18 @@
 </tbody>
 </table>
 <hr>
-<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><p>Number 类型应该是 ECMAScript 中最令人关注的数据类型了,这种类型使用 IEEE754 格式来表示 整数和浮点数值(浮点数值在某些语言中也被称为双精度数值)。<br>为支持各种数值类型,ECMA-262 定 义了不同的数值字面量格式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> intNum = <span class="number">55</span>;        <span class="comment">// 十进制整数</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> octalNum1 = <span class="number">070</span>;    <span class="comment">// 八进制的 56</span></div><div class="line"><span class="keyword">var</span> octalNum2 = <span class="number">079</span>;    <span class="comment">// 无效的八进制数值——解析为 79</span></div><div class="line"><span class="keyword">var</span> octalNum3 = <span class="number">08</span>;     <span class="comment">// 无效的八进制数值——解析为 8</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> hexNum1 = <span class="number">0xA</span>;      <span class="comment">// 十六进制的 10</span></div><div class="line"><span class="keyword">var</span> hexNum2 = <span class="number">0x1f</span>;     <span class="comment">// 十六进制的 31</span></div></pre></td></tr></table></figure></p>
+<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><p>Number 类型应该是 ECMAScript 中最令人关注的数据类型了,这种类型使用 IEEE754 格式来表示 整数和浮点数值(浮点数值在某些语言中也被称为双精度数值)。<br>为支持各种数值类型,ECMA-262 定 义了不同的数值字面量格式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> intNum = <span class="number">55</span>;        <span class="comment">// 十进制整数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> octalNum1 = <span class="number">070</span>;    <span class="comment">// 八进制的 56</span></span><br><span class="line"><span class="keyword">var</span> octalNum2 = <span class="number">079</span>;    <span class="comment">// 无效的八进制数值——解析为 79</span></span><br><span class="line"><span class="keyword">var</span> octalNum3 = <span class="number">08</span>;     <span class="comment">// 无效的八进制数值——解析为 8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hexNum1 = <span class="number">0xA</span>;      <span class="comment">// 十六进制的 10</span></span><br><span class="line"><span class="keyword">var</span> hexNum2 = <span class="number">0x1f</span>;     <span class="comment">// 十六进制的 31</span></span><br></pre></td></tr></table></figure></p>
 <p><em>八进制字面量在严格模式下是无效的,会导致支持的 JavaScript 引擎抛出错误。</em></p>
 <blockquote>
 <p>在进行算术计算时,所有以八进制和十六进制表示的数值最终都将被转换成十进制数值。</p>
 </blockquote>
 <ul>
-<li>浮点数值<br>由于保存浮点数值需要的内存空间是保存整数值的两倍,因此 ECMAScript 会不失时机地将浮点数值 转换为整数值。<br>显然,如果小数点后面没有跟任何数字,那么这个数值就可以作为整数值来保存。同样 地,如果浮点数值本身表示的就是一个整数(如 1.0),那么该值也会被转换为整数。<br>在默认情况下,ECMASctipt 会将那些小数点后面带有 6 个零以上的浮点数值转换为以 e 表示法 表示的数值(例如,0.0000003 会被转换成 3e-7)。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">0.1</span>+<span class="number">0.2</span>;        <span class="comment">// 0.30000000000000004 IEEE754 数值的浮点计算的通病</span></div></pre></td></tr></table></figure>
+<li>浮点数值<br>由于保存浮点数值需要的内存空间是保存整数值的两倍,因此 ECMAScript 会不失时机地将浮点数值 转换为整数值。<br>显然,如果小数点后面没有跟任何数字,那么这个数值就可以作为整数值来保存。同样 地,如果浮点数值本身表示的就是一个整数(如 1.0),那么该值也会被转换为整数。<br>在默认情况下,ECMASctipt 会将那些小数点后面带有 6 个零以上的浮点数值转换为以 e 表示法 表示的数值(例如,0.0000003 会被转换成 3e-7)。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.1</span>+<span class="number">0.2</span>;        <span class="comment">// 0.30000000000000004 IEEE754 数值的浮点计算的通病</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>浮点数值的最高精度是 17 位小数,但在进行算术计算时其精确度远远不如整数。</p>
 <ul>
-<li>数值范围<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>.MIN_VALUE        <span class="comment">//5e-324</span></div><div class="line"><span class="built_in">Number</span>.MAX_VALUE        <span class="comment">//1.7976931348623157e+308</span></div></pre></td></tr></table></figure>
+<li>数值范围<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.MIN_VALUE        <span class="comment">//5e-324</span></span><br><span class="line"><span class="built_in">Number</span>.MAX_VALUE        <span class="comment">//1.7976931348623157e+308</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>如果某次计算的 结果得到了一个超出 JavaScript 数值范围的值,那么这个数值将被自动转换成特殊的 Infinity 值。<br>具体来说,如果这个数值是负数,则会被转换成-Infinity(负无穷),如果这个数值是正数,则会被转换成 Infinity(正无穷)。<br>要想确定一个数值是不是有穷的(换句话说,是不是位于最 小和最大的数值之间),可以使用<code>isFinite()</code>函数。</p>
@@ -329,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjejkug5n00002ps6g9duc1zy" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjiny1k790004txs6sa9312iu" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js学习笔记/">js学习笔记</a></li></ul>
@@ -367,20 +407,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjejkug5v00032ps6vehvy2ju" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjiny1k740001txs6eubzn4e4" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -411,7 +451,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+      <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
     </div>
   </div>
 
@@ -420,7 +460,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -431,6 +471,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/21/webpack代码分割注意事项.html">webpack代码分割注意事项</a>
+          </li>
         
           <li>
             <a href="/2018/03/08/docker-attention.html">docker_attention</a>
@@ -446,10 +490,6 @@
         
           <li>
             <a href="/2017/06/01/js-base.html">js基本概念</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/28/hello-world.html">Hello World</a>
           </li>
         
       </ul>
