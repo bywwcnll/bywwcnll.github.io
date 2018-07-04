@@ -66,6 +66,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-extends-error-in-babel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/04/extends-error-in-babel.html" class="article-date">
+  <time datetime="2018-07-04T11:00:39.000Z" itemprop="datePublished">2018-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/04/extends-error-in-babel.html">extends-error-in-babel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="创建RequestError"><a href="#创建RequestError" class="headerlink" title="创建RequestError"></a>创建RequestError</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RequestError</span> <span class="keyword">extends</span> <span class="title">Error</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> (message) &#123;</span><br><span class="line">    <span class="keyword">super</span>()</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(<span class="keyword">this</span>, <span class="string">'message'</span>, &#123;</span><br><span class="line">      configurable: <span class="literal">true</span>,</span><br><span class="line">      enumerable: <span class="literal">false</span>,</span><br><span class="line">      value: message !== <span class="literal">undefined</span> ? <span class="built_in">String</span>(message) : <span class="string">''</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(<span class="keyword">this</span>, <span class="string">'name'</span>, &#123;</span><br><span class="line">      configurable: <span class="literal">true</span>,</span><br><span class="line">      enumerable: <span class="literal">false</span>,</span><br><span class="line">      value: <span class="keyword">this</span>.constructor.name</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Error</span>.captureStackTrace === <span class="string">'function'</span>) &#123;</span><br><span class="line">      <span class="built_in">Error</span>.captureStackTrace(<span class="keyword">this</span>, <span class="keyword">this</span>.constructor)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = RequestError</span><br></pre></td></tr></table></figure>
+<p>##webpack配置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpackConfig.module.rules</span></span><br><span class="line"><span class="keyword">var</span> test = &#123;</span><br><span class="line">  test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">  include: [resolve(<span class="string">'src'</span>), resolve(<span class="string">'test'</span>), resolve(<span class="string">'node_modules/webpack-dev-server/client'</span>)],</span><br><span class="line">  exclude: [resolve(<span class="string">'src/utils/RequestError'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/04/extends-error-in-babel.html" data-id="cjj70n8jy00005zs654kh37at" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/">babel</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-webpack代码分割注意事项" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/21/webpack代码分割注意事项.html" class="article-date">
@@ -93,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/06/21/webpack代码分割注意事项.html" data-id="cjiny1k7f000atxs6jzgaduu3" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/06/21/webpack代码分割注意事项.html" data-id="cjj70n8kg000b5zs6fktgs7ho" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
@@ -146,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjiny1k700000txs62nkb034i" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/docker-attention.html" data-id="cjj70n8k200015zs6mta1b08b" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -188,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjiny1k7b0005txs6v12op49a" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/08/watch-film.html" data-id="cjj70n8kd00095zs6eouazrjx" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/film/">film</a></li></ul>
@@ -236,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjiny1k7d0006txs6beopj9a5" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjj70n8k800055zs6ouhv4vge" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -369,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjiny1k790004txs6sa9312iu" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/06/01/js-base.html" data-id="cjj70n8k900065zs6zkbdytsq" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js学习笔记/">js学习笔记</a></li></ul>
@@ -420,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjiny1k740001txs6eubzn4e4" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2017/05/28/hello-world.html" data-id="cjj70n8k600035zs6hbmcdav5" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -451,7 +491,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+      <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/film/" style="font-size: 10px;">film</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/js学习笔记/" style="font-size: 10px;">js学习笔记</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
     </div>
   </div>
 
@@ -460,7 +500,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -471,6 +511,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/07/04/extends-error-in-babel.html">extends-error-in-babel</a>
+          </li>
         
           <li>
             <a href="/2018/06/21/webpack代码分割注意事项.html">webpack代码分割注意事项</a>
@@ -486,10 +530,6 @@
         
           <li>
             <a href="/2018/03/07/js-this.html">js-this</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/01/js-base.html">js基本概念</a>
           </li>
         
       </ul>
