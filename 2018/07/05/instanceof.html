@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js-this | Bywwcnll</title>
+  <title>instanceof | Bywwcnll</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this关键字作用域详解 this是一个总指向调用者的指针。以下是this指向的不同情况：   作为对象方法调用，this是对象- 作为函数调用(包括立即执行函数)，this是window 作为内部函数，即声明在函数中的函数，this是window 作为构造函数调用，即用new，this指向新生成的对象  node.js中没有window对象，这种情况都指向null。">
-<meta name="keywords" content="js">
+  <meta name="description" content="javascript instanceof 详解instanceof运算符逻辑示例1234567891011function instance_of(L, R) &amp;#123;//L 表示左表达式，R 表示右表达式 var O = R.prototype;// 取 R 的显示原型 L = L.__proto__;// 取 L 的隐式原型 while (true) &amp;#123;   if (L ===">
+<meta name="keywords" content="js,prototype,instanceof">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-this">
-<meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html">
+<meta property="og:title" content="instanceof">
+<meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/05/instanceof.html">
 <meta property="og:site_name" content="Bywwcnll">
-<meta property="og:description" content="this关键字作用域详解 this是一个总指向调用者的指针。以下是this指向的不同情况：   作为对象方法调用，this是对象- 作为函数调用(包括立即执行函数)，this是window 作为内部函数，即声明在函数中的函数，this是window 作为构造函数调用，即用new，this指向新生成的对象  node.js中没有window对象，这种情况都指向null。">
+<meta property="og:description" content="javascript instanceof 详解instanceof运算符逻辑示例1234567891011function instance_of(L, R) &amp;#123;//L 表示左表达式，R 表示右表达式 var O = R.prototype;// 取 R 的显示原型 L = L.__proto__;// 取 L 的隐式原型 while (true) &amp;#123;   if (L ===">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-07T08:53:12.567Z">
+<meta property="og:updated_time" content="2018-07-05T04:36:00.990Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-this">
-<meta name="twitter:description" content="this关键字作用域详解 this是一个总指向调用者的指针。以下是this指向的不同情况：   作为对象方法调用，this是对象- 作为函数调用(包括立即执行函数)，this是window 作为内部函数，即声明在函数中的函数，this是window 作为构造函数调用，即用new，this指向新生成的对象  node.js中没有window对象，这种情况都指向null。">
+<meta name="twitter:title" content="instanceof">
+<meta name="twitter:description" content="javascript instanceof 详解instanceof运算符逻辑示例1234567891011function instance_of(L, R) &amp;#123;//L 表示左表达式，R 表示右表达式 var O = R.prototype;// 取 R 的显示原型 L = L.__proto__;// 取 L 的隐式原型 while (true) &amp;#123;   if (L ===">
   
     <link rel="alternate" href="/atom.xml" title="Bywwcnll" type="application/atom+xml">
   
@@ -69,12 +69,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-js-this" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-instanceof" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/07/js-this.html" class="article-date">
-  <time datetime="2018-03-07T08:47:49.000Z" itemprop="datePublished">2018-03-07</time>
+    <a href="/2018/07/05/instanceof.html" class="article-date">
+  <time datetime="2018-07-05T03:40:12.000Z" itemprop="datePublished">2018-07-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -83,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js-this
+      instanceof
     </h1>
   
 
@@ -91,24 +95,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="this关键字作用域详解"><a href="#this关键字作用域详解" class="headerlink" title="this关键字作用域详解"></a>this关键字作用域详解</h1><blockquote>
-<p>this是一个总指向调用者的指针。以下是this指向的不同情况：</p>
+        <h1 id="javascript-instanceof-详解"><a href="#javascript-instanceof-详解" class="headerlink" title="javascript instanceof 详解"></a>javascript instanceof 详解</h1><h2 id="instanceof运算符逻辑示例"><a href="#instanceof运算符逻辑示例" class="headerlink" title="instanceof运算符逻辑示例"></a>instanceof运算符逻辑示例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instance_of</span>(<span class="params">L, R</span>) </span>&#123;<span class="comment">//L 表示左表达式，R 表示右表达式</span></span><br><span class="line"> <span class="keyword">var</span> O = R.prototype;<span class="comment">// 取 R 的显示原型</span></span><br><span class="line"> L = L.__proto__;<span class="comment">// 取 L 的隐式原型</span></span><br><span class="line"> <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">   <span class="keyword">if</span> (L === <span class="literal">null</span>)</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">   <span class="keyword">if</span> (O === L)<span class="comment">// 这里重点：当 O 严格等于 L 时，返回 true</span></span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">   L = L.__proto__;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Function与Object的关系"><a href="#Function与Object的关系" class="headerlink" title="Function与Object的关系"></a>Function与Object的关系</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>先了解js中以下几点定义</p>
 </blockquote>
-<ul>
-<li>作为对象方法调用，this是对象-</li>
-<li>作为函数调用(包括立即执行函数)，this是window</li>
-<li>作为内部函数，即声明在函数中的函数，this是window</li>
-<li>作为构造函数调用，即用new，this指向新生成的对象</li>
-</ul>
-<p><code>node.js中没有window对象，这种情况都指向null。</code></p>
+<ol>
+<li>所有 JavaScript 对象都有<code>__proto__</code>属性</li>
+<li>只有 <code>Object.prototype.__proto__</code> 为<code>null</code></li>
+</ol>
+<h3 id="Function-Object验证流程"><a href="#Function-Object验证流程" class="headerlink" title="Function-Object验证流程"></a>Function-Object验证流程</h3><p>Function的<code>__proto__</code>指向Function的Function.prototype，然后Function.prototype的<code>__proto__</code>指向Object.prototype，最后Object.prototype的<code>__proto__</code> 为<code>null</code></p>
+<h3 id="Object-Function验证流程"><a href="#Object-Function验证流程" class="headerlink" title="Object-Function验证流程"></a>Object-Function验证流程</h3><p>Object的<code>__proto__</code>指向Function的Function.prototype</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/03/07/js-this.html" data-id="cjj8276mm000ajgs667yc35i2" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/05/instanceof.html" data-id="cjj8276mh0005jgs6jy7ebwus" class="article-share-link">分享</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/instanceof/">instanceof</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
 
     </footer>
   </div>
@@ -116,19 +122,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/08/watch-film.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          watch_film
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/01/js-base.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/04/extends-error-in-babel.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">js基本概念</div>
+      <div class="article-nav-title">extends-error-in-babel</div>
     </a>
   
 </nav>
