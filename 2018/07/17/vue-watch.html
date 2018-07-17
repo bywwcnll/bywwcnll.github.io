@@ -5,18 +5,18 @@
   
   <title>vue-watch | Bywwcnll</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#VUE中watch的使用注意事项 ##组件嵌套  当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执">
+  <meta name="description" content="VUE中watch的使用注意事项组件嵌套 当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执行监视操作">
 <meta name="keywords" content="js,vue,watch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-watch">
 <meta property="og:url" content="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/17/vue-watch.html">
 <meta property="og:site_name" content="Bywwcnll">
-<meta property="og:description" content="#VUE中watch的使用注意事项 ##组件嵌套  当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执">
+<meta property="og:description" content="VUE中watch的使用注意事项组件嵌套 当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执行监视操作">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-17T10:46:48.883Z">
+<meta property="og:updated_time" content="2018-07-17T10:49:33.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-watch">
-<meta name="twitter:description" content="#VUE中watch的使用注意事项 ##组件嵌套  当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执">
+<meta name="twitter:description" content="VUE中watch的使用注意事项组件嵌套 当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：  父子组件的生命周期是：父组件在created和mounted完成后，执行子组件的created和mounted 父组件的发送请求是异步的，当请求过快的时候，子组件的监视对象的watch就无法执行，当请求慢的时候能执行监视操作">
   
     <link rel="alternate" href="/atom.xml" title="Bywwcnll" type="application/atom+xml">
   
@@ -91,9 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#VUE中watch的使用注意事项</p>
-<p>##组件嵌套</p>
-<blockquote>
+        <h1 id="VUE中watch的使用注意事项"><a href="#VUE中watch的使用注意事项" class="headerlink" title="VUE中watch的使用注意事项"></a>VUE中watch的使用注意事项</h1><h2 id="组件嵌套"><a href="#组件嵌套" class="headerlink" title="组件嵌套"></a>组件嵌套</h2><blockquote>
 <p>当使用组件嵌套时，子组件中存在对需要发请求获取的父组件属性监视时，需要同时在子组件的created和watch中操作，原因如下：</p>
 <ol>
 <li>父子组件的生命周期是：<code>父组件</code>在created和mounted完成后，执行<code>子组件</code>的created和mounted</li>
@@ -104,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/17/vue-watch.html" data-id="cjjpkqs8s000bves6wpax8otb" class="article-share-link">分享</a>
+      <a data-url="https://github.com/bywwcnll/bywwcnll.github.io/2018/07/17/vue-watch.html" data-id="cjjpkt7k2000b0ds6gwoyvutf" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/watch/">watch</a></li></ul>
